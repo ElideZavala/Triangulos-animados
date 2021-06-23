@@ -1,0 +1,70 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-image: radial-gradient(circle at 79.22% 50%, #c5ae24 0, #cfa51c 6.25%, #d99b17 12.5%, #e19016 18.75%, #e78318 25%, #ec741d 31.25%, #f06323 37.5%, #f24e2a 43.75%, #f23232 50%, #f1003b 56.25%, #ee0045 62.5%, #ea0051 68.75%, #e4005f 75%, #dc006d 81.25%, #d2007e 87.5%, #c5008f 93.75%, #b500a0 100%);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	overflow: hidden;
+	margin: 0;
+}
+
+.kinetic {
+	position: relative;
+	height: 80px;
+	width: 80px;
+}
+
+.kinetic::after, 
+.kinetic::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 0;
+	border: 50px solid transparent;
+	border-bottom-color: rgb(0, 0, 0);
+	animation: rotateA 2s linear infinite 0.5s;
+}
+
+.kinetic::before {
+	transform: rotate(90deg);
+	animation: rotateB 2s linear infinite;
+}
+
+@keyframes rotateA {
+	0%, 
+	25% {
+		transform: rotate(0deg);
+	}
+
+	50%, 
+	75% {
+		transform: rotate(180deg);
+	}
+	
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes rotateB {
+	0%, 
+	25% {
+		transform: rotate(90deg);
+	}
+
+	50%, 
+	75% {
+		transform: rotate(270deg);
+	}
+	
+	100% {
+		transform: rotate(450deg);
+	}
+}
